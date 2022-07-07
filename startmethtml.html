@@ -15,7 +15,7 @@
         }
         function barMeter(){
             let elem = document.getElementById("deleeftijd");
-            if(elem.value < 16){
+            if(elem.length < 16){
                 elem.style.backgroundColor = 'red';
             }else if(elem.value < 18){
                 elem.style.backgroundColor = 'orange';
@@ -32,6 +32,7 @@
     </script>
 </head>
 <body>
+    <a href="galgjefelix.html">naar Galgje</a>
     <input type="text" id="denaamvoorq">
     <input type="button" onclick="geenQHier()" value="DeurBeleid">
     <hr>

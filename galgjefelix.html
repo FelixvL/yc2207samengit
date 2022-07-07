@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .eenLetter{
+            display:inline-block;
+            background-color: yellow;
+            border: 2px solid grey;
+            width:40px;
+            height:40px;
+        }
+    </style>
+    <script>
+        let hetwoord = "favorieteplekterwesten";
+        window.onload = toonLetters;
+        var tellertje = 0;
+        function toonLetters(){
+            let deDiv = document.getElementById("hokjes");
+            for(let x = 0; x < hetwoord.length; x++){
+                deDiv.innerHTML += `<div class="eenLetter"></div>`;
+            }
+        }
+        function ffdee(){
+            for(let x = 0; x < hetwoord.length; x++){
+                console.log( hetwoord[x] );
+                if(hetwoord[x] == 'e'){
+                    console.log("yes");
+                    tellertje++;
+                }
+            }
+            alert("aantal e's is "+tellertje);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="ffdee()" value="hoeveel e">
+    galgje
+    <div id="hokjes">
+
+    </div>
+</body>
+</html>
