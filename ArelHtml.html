@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function buttonClick(){
+        function alcoholCheck(){
             //onder 18 is rood, 16-18 is orange. 18 + is groen
             let numberValue = document.getElementById("name").value;
             if (numberValue < 16){
@@ -17,6 +17,8 @@
                 document.getElementById("name").style.backgroundColor = "green";
             }
 
+        }
+        function lastLetterCheck(){
             //Take name from id
             var userName = document.getElementById("name2").value;
             //Get last letter
@@ -32,11 +34,11 @@
 </head>
 <body>
     <input id="name" type="text">
-    <input type="button" value="Klik hier" onclick="buttonClick()">
+    <input type="button" value="Klik hier" onclick="alcoholCheck()">
     <h1> <span id="nameValue"></span></h1>
 
     <input id="name2" type="text">
-    <input type="button" value="Klik hier" onclick="buttonClick()">
+    <input type="button" value="Klik hier" onclick="lastLetterCheck()">
     <h1> <span id="nameValue2"></span></h1>
 </body>
 </html>
