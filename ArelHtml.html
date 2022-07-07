@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function buttonClick(){
+            let userName = document.getElementById("name").value;
+            document.getElementById("nameValue").innerHTML = userName + "!";
+        }
+    </script>
 </head>
 <body>
-    <input type="text">
-    <input type="button" value="Klik hier">
+    <input id="name" type="text">
+    <input type="button" value="Klik hier" onclick="buttonClick()">
+    <h1>Welkom <span id="nameValue"></span></h1>
 </body>
 </html>
