@@ -7,13 +7,16 @@
     <title>Document</title>
     <script>
         function buttonKlik(){
-            var denaam = document.getElementById("invoervak").value;
-            document.getElementById("denaamspan").innerHTML = denaam;
+            var deDOM = document.getElementsByTagName("html");
+            console.log(deDOM);
+            var denaam = document.getElementById("invoervak");
+            document.getElementById("denaamspan").innerHTML = denaam.value;
+            denaam.style.backgroundColor = 'green';
         }
     </script>
 </head>
 <body>
-    <input type="text" id="invoervak">
+    <input type="text" id="invoervak" value="Vul maar in">
     <input type="button" value="Klik hier" onclick="buttonKlik()">  
     <h1>Welkom: <span id="denaamspan"></span></h1> 
 </body>
