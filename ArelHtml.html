@@ -7,7 +7,7 @@
     <title>Document</title>
     <script>
         function buttonClick(){
-            //onder 18 is rood, 16-18 is orange. 18 + is groen
+           /* //onder 18 is rood, 16-18 is orange. 18 + is groen
             let numberValue = document.getElementById("name").value;
             if (numberValue < 16){
                 document.getElementById("name").style.backgroundColor = "red";
@@ -19,6 +19,17 @@
 
             if (numberValue > 18){
                 document.getElementById("name").style.backgroundColor = "green";
+            }*/
+
+            var userName = document.getElementById("name").value;
+            var lastLetter = userName.slice(-1);
+            
+            if (lastLetter != "Q" || lastLetter != "q"){
+                document.getElementById("nameValue").innerHTML = "Welkom: " + userName;
+            }
+
+            if (lastLetter == "Q" || lastLetter == "q"){
+                document.getElementById("nameValue").innerHTML = "Jij bent niet welkom hier " + userName + "!";
             }
         }
     </script>
@@ -26,6 +37,6 @@
 <body>
     <input id="name" type="text">
     <input type="button" value="Klik hier" onclick="buttonClick()">
-    <h1>Welkom <span id="nameValue"></span></h1>
+    <h1> <span id="nameValue"></span></h1>
 </body>
 </html>
