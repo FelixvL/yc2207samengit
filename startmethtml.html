@@ -13,9 +13,37 @@
             document.getElementById("denaamspan").innerHTML = denaam.value;
             denaam.style.backgroundColor = 'green';
         }
+        function barMeter(){
+            let elem = document.getElementById("deleeftijd");
+            if(elem.value < 16){
+                elem.style.backgroundColor = 'red';
+            }else if(elem.value < 18){
+                elem.style.backgroundColor = 'orange';
+            }else{
+                elem.style.backgroundColor = 'green';
+            }
+        }
+        function geenQHier(){
+            let voornaam = document.getElementById("denaamvoorq").value;
+            if(voornaam.charAt(voornaam.length - 1) == "q"){
+                alert("Nee");
+            }
+        }
     </script>
 </head>
 <body>
+    <input type="text" id="denaamvoorq">
+    <input type="button" onclick="geenQHier()" value="DeurBeleid">
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <input type="text" id="deleeftijd">
+    <input type="button" onclick="barMeter()" value="BarMeter">
+    <hr>
+    <hr>
+    <hr>
+    <hr>
     <input type="text" id="invoervak" value="Vul maar in">
     <input type="button" value="Klik hier" onclick="buttonKlik()">  
     <h1>Welkom: <span id="denaamspan"></span></h1> 
