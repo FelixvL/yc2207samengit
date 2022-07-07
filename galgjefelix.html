@@ -15,18 +15,29 @@
         }
     </style>
     <script>
-        let hetwoord = "fietsenrek";
+        let hetwoord = "favorieteplekterwesten";
         window.onload = toonLetters;
-        
+        var tellertje = 0;
         function toonLetters(){
             let deDiv = document.getElementById("hokjes");
             for(let x = 0; x < hetwoord.length; x++){
                 deDiv.innerHTML += `<div class="eenLetter"></div>`;
             }
         }
+        function ffdee(){
+            for(let x = 0; x < hetwoord.length; x++){
+                console.log( hetwoord[x] );
+                if(hetwoord[x] == 'e'){
+                    console.log("yes");
+                    tellertje++;
+                }
+            }
+            alert("aantal e's is "+tellertje);
+        }
     </script>
 </head>
 <body>
+    <input type="button" onclick="ffdee()" value="hoeveel e">
     galgje
     <div id="hokjes">
 
