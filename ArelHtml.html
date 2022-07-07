@@ -7,29 +7,25 @@
     <title>Document</title>
     <script>
         function buttonClick(){
-           /* //onder 18 is rood, 16-18 is orange. 18 + is groen
+            //onder 18 is rood, 16-18 is orange. 18 + is groen
             let numberValue = document.getElementById("name").value;
             if (numberValue < 16){
                 document.getElementById("name").style.backgroundColor = "red";
-            }
-
-            if (numberValue < 18 && numberValue > 16){
+            } else if (numberValue < 18 && numberValue >= 16){
                 document.getElementById("name").style.backgroundColor = "orange";
+            }else{
+                document.getElementById("name").style.backgroundColor = "green";
             }
 
-            if (numberValue > 18){
-                document.getElementById("name").style.backgroundColor = "green";
-            }*/
-
-            var userName = document.getElementById("name").value;
+            //Take name from id
+            var userName = document.getElementById("name2").value;
+            //Get last letter
             var lastLetter = userName.slice(-1);
             
-            if (lastLetter != "Q" || lastLetter != "q"){
-                document.getElementById("nameValue").innerHTML = "Welkom: " + userName;
-            }
-
             if (lastLetter == "Q" || lastLetter == "q"){
-                document.getElementById("nameValue").innerHTML = "Jij bent niet welkom hier " + userName + "!";
+                document.getElementById("nameValue2").innerHTML = "Jij bent niet welkom hier " + userName + "!";
+            }else{
+                document.getElementById("nameValue2").innerHTML = "Welkom: " + userName;
             }
         }
     </script>
@@ -38,5 +34,9 @@
     <input id="name" type="text">
     <input type="button" value="Klik hier" onclick="buttonClick()">
     <h1> <span id="nameValue"></span></h1>
+
+    <input id="name2" type="text">
+    <input type="button" value="Klik hier" onclick="buttonClick()">
+    <h1> <span id="nameValue2"></span></h1>
 </body>
 </html>
