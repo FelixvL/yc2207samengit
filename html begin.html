@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML oefen document</title>
+    <script>
+        function buttonKlick(){
+            var invoer = document.getElementById("invoervak");
+            var invoernaam = document.getElementById("invoervak2").value;
+            var last = invoernaam.charAt(invoernaam.length - 1);
+
+            document.getElementById("denaamspan").innerHTML = invoer.value;
+            
+            if(invoer.value >= 3) {
+                invoer.style.backgroundColor = "red";
+            } else if (invoer.value >= 1.5) {
+                invoer.style.backgroundColor = "orange";
+            } else {
+                invoer.style.backgroundColor = "green";
+            }
+
+            if(last == "q"){
+                alert();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Hoeveel promille heeft u?</h1>
+    <input type="float" id="invoervak">
+    <h1>Wat is uw naam?</h1>
+    <input type="text" id="invoervak2">
+    <input type="button" value="klik hier" onclick="buttonKlick()">
+    <h1>Jou Promilage: <span id="denaamspan"></span></h1>
+</body>
+</html>
