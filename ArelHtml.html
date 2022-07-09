@@ -5,7 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .square{
+            height: 50px;
+            width: 50px;
+            outline-style: solid;
+        }
+    </style>
     <script>
+
+        let correctlyGuessed = new Array();
+
         function alcoholCheck(){
             //onder 18 is rood, 16-18 is orange. 18 + is groen
             let numberValue = document.getElementById("name").value;
@@ -30,6 +40,36 @@
                 document.getElementById("nameValue2").innerHTML = "Welkom: " + userName;
             }
         }
+
+        function lingo(){
+            let wordGame = "Banana";
+            let newHtml = "";
+
+
+            let userGuess = document.getElementById("lingoGuess").value;
+
+            for(let a = 0; a < wordGame.length; a++){
+                if(userGuess == wordGame[a]){
+                    console.log("Correctly guessed!");
+                     correctlyGuessed.push(wordGame[a]);
+                }
+            }
+
+            for(let b = 0; b < wordGame.length; b++){
+                console.log("word game is currently: " + wordGame[b]);
+                for(let c = 0; c < correctlyGuessed.length; c++){
+
+                    if(correctlyGuessed[c] == wordGame[b]){
+                        newHtml = newHtml + "<div class= 'square' > " + wordGame[b] + " </div>";
+                    }else{
+                        newHtml = newHtml + "<div class= 'square' > </div>";
+                    }
+                }
+            }
+            document.getElementById("word").innerHTML = newHtml;
+
+        }
+
     </script>
 </head>
 <body>
@@ -40,5 +80,11 @@
     <input id="name2" type="text">
     <input type="button" value="Klik hier" onclick="lastLetterCheck()">
     <h1> <span id="nameValue2"></span></h1>
+
+    <input id="lingoGuess" type="text">
+    <input type="button" value="Klik hier" onclick="lingo()">
+    <div id="word">
+
+    </div>
 </body>
 </html>
